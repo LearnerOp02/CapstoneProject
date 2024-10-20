@@ -1,0 +1,67 @@
+.bg-gradient {
+    background: linear-gradient(90deg, #0d1b2a, #1a1b41) !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* General transition for smooth hover effects */
+.transition {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 255, 0, 0.3);
+}
+
+/* Hover effect for cards */
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 15px rgba(255, 255, 0, 0.2);
+}

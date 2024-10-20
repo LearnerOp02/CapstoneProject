@@ -1,0 +1,73 @@
+/* Footer.css */
+
+/* Premium gradient background for the footer */
+.footer {
+    background: linear-gradient(90deg, #0d1b2a, #1a1b41); /* Similar to the navbar */
+    border-top: 3px solid #ffc107; /* Premium golden color for top border */
+    color: white;
+    transition: background-color 0.5s ease-in-out;
+}
+
+/* Fade-in animation for footer sections */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Hover effect for the entire footer */
+.animate-footer:hover {
+    background-color: #292b2c;
+    transition: background-color 0.5s ease-in-out;
+}
+
+/* Link hover effect */
+.link-hover {
+    position: relative;
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+}
+
+.link-hover::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #ffc107; /* Premium golden underline on hover */
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.link-hover:hover::after {
+    width: 100%;
+}
+
+.link-hover:hover {
+    color: #ffc107;
+}
+
+/* Email and phone links hover effect */
+.address-link {
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+}
+
+.address-link:hover {
+    color: #ffc107; /* Change color to golden on hover */
+}
+
+/* Adjust icon size and spacing */
+.fa-envelope, .fa-phone {
+    font-size: 1.1rem;
+    margin-right: 8px;
+}

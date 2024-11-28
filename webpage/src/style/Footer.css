@@ -1,73 +1,122 @@
-/* Footer.css */
-
-/* Premium gradient background for the footer */
+/* Footer Styles */
 .footer {
-    background: linear-gradient(90deg, #0d1b2a, #1a1b41); /* Similar to the navbar */
-    border-top: 3px solid #ffc107; /* Premium golden color for top border */
-    color: white;
-    transition: background-color 0.5s ease-in-out;
-}
-
-/* Fade-in animation for footer sections */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-in {
-    animation: fadeIn 1.2s ease-in-out;
-}
-
-/* Hover effect for the entire footer */
-.animate-footer:hover {
-    background-color: #292b2c;
-    transition: background-color 0.5s ease-in-out;
-}
-
-/* Link hover effect */
-.link-hover {
-    position: relative;
+    background-color: #1a1d40;
+    padding: 2.5rem 0;
     color: #ffffff;
-    transition: color 0.3s ease-in-out;
+    font-family: "Open Sans", sans-serif; /* Web-friendly font */
+    text-align: center; /* Improved alignment for smaller screens */
+    transition: background-color 0.4s ease, padding 0.4s ease;
 }
 
-.link-hover::after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background-color: #ffc107; /* Premium golden underline on hover */
-    bottom: 0;
-    left: 0;
-    transition: width 0.3s ease-in-out;
-}
-
-.link-hover:hover::after {
-    width: 100%;
-}
-
-.link-hover:hover {
+.footer h5 {
     color: #ffc107;
+    font-weight: 700; /* Bold for emphasis */
+    margin-bottom: 1rem;
+    font-size: 1.2rem; /* Standard heading size */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Email and phone links hover effect */
-.address-link {
-    color: #ffffff;
-    transition: color 0.3s ease-in-out;
+.footer h5:hover {
+    color: #e0a800; /* Contrast enhancement on hover */
+    transform: scale(1.05); /* Slight lift on hover */
 }
 
-.address-link:hover {
-    color: #ffc107; /* Change color to golden on hover */
+.footer p {
+    font-size: 1rem; /* Readable font size for general text */
+    line-height: 1.8;
+    color: #d1d1d1;
+    font-weight: 400; /* Regular weight for paragraphs */
+    transition: color 0.3s ease;
 }
 
-/* Adjust icon size and spacing */
-.fa-envelope, .fa-phone {
-    font-size: 1.1rem;
-    margin-right: 8px;
+.footer-link,
+.footer-contact {
+    color: #b8b8b8;
+    text-decoration: none;
+    font-size: 0.95rem; /* Slightly smaller for less emphasis */
+    font-weight: 400; /* Regular weight for links */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-link:hover,
+.footer-contact:hover {
+    color: #ffc107;
+    transform: translateY(-3px); /* Dynamic hover effect */
+}
+
+.contact-icon {
+    font-size: 1.6rem; /* Distinct size for icons */
+    color: #ffc107;
+    margin-bottom: 0.5rem;
+    transition: transform 0.4s ease, color 0.3s ease;
+}
+
+.contact-icon:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
+    color: #e0a800; /* Subtle color shift */
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    border-top: 1px solid #495057; /* Subtle separator */
+    margin-top: 2rem;
+    padding-top: 1rem;
+    font-size: 0.85rem; /* Smaller font size for less prominent content */
+    color: #b8b8b8;
+    text-align: center;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-bottom:hover {
+    color: #ffc107;
+    border-color: #ffc107; /* Enhanced hover effect */
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+    .footer .col-md-6 {
+        text-align: left; /* Aligns content for medium+ screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 1.5rem; /* Reduced padding for smaller screens */
+        text-align: center;
+    }
+
+    .footer h5 {
+        font-size: 1rem; /* Slightly smaller heading size */
+        letter-spacing: 0.8px;
+    }
+
+    .footer p {
+        font-size: 0.9rem; /* Adjusted for smaller screens */
+    }
+
+    .footer .row {
+        flex-direction: column; /* Stacks content vertically */
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer {
+        padding: 1.2rem 0; /* Compact padding for the smallest screens */
+    }
+
+    .footer h5 {
+        font-size: 0.9rem; /* Smaller heading size */
+    }
+
+    .footer p {
+        font-size: 0.85rem; /* Reduced text size */
+        line-height: 1.6;
+    }
+
+    .footer-bottom {
+        font-size: 0.75rem; /* Minimal size for non-critical text */
+    }
 }

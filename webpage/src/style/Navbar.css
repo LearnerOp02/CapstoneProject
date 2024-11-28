@@ -1,41 +1,57 @@
-/* Navbar.css */
+/* Navbar Styles */
 .navbar {
-    background: linear-gradient(90deg, #0d1b2a, #1a1b41);
-    /* Subtle gradient for premium feel */
-    animation: slideIn 1s ease-in-out; /* Slide-in animation */
+    background-color: #1a1d40;
+    padding: 1rem;
+    transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                padding 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    font-family: "Roboto", sans-serif; /* Web-friendly font */
+    font-size: 16px; /* Base font size for better readability */
+}
+
+.navbar:hover {
+    background-color: #151836;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .navbar-logo {
-    width: 50px; /* Adjust logo size */
+    width: 40px;
     height: auto;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.1);
+    opacity: 0.9; /* Slight fade effect for a polished feel */
 }
 
 .nav-link {
-    transition: color 0.3s ease-in-out;
+    color: #ffffff;
+    margin: 0 10px;
+    position: relative;
+    font-size: 1rem; /* Ensure consistency with base font size */
+    font-weight: 500; /* Medium weight for links */
+    transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover {
-    color: #ffdd57;
-    /* Golden color for hover */
-}
-
-/* Hover underline animation */
-.hover-underline-animation {
-    position: relative;
+    color: #ffc107;
+    transform: translateY(-3px);
 }
 
 .hover-underline-animation::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
-    transform: scaleX(0);
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #ffdd57;
-    /* Golden underline animation */
+    background-color: #ffc107;
+    transform: scaleX(0);
     transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hover-underline-animation:hover::after {
@@ -43,7 +59,100 @@
     transform-origin: bottom left;
 }
 
-/* Smooth collapse/expand transition for navbar */
-.collapse {
-    transition: height 0.5s ease-in-out;
+.navbar-toggler {
+    background-color: #ffc107;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+    font-size: 1rem; /* Consistent with base font size */
+    font-weight: 600; /* Bold for prominence */
+}
+
+.navbar-toggler:hover {
+    background-color: #e0a800;
+    transform: scale(1.05); /* Subtle zoom-in for smoother interaction */
+}
+
+/* Responsive Layout Adjustments */
+@media (min-width: 1200px) {
+    .navbar {
+        padding: 1rem 4rem;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .navbar {
+        padding: 1rem 3rem;
+    }
+
+    .navbar .navbar-nav {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-logo {
+        display: none;
+    }
+
+    .navbar .container-fluid {
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.1rem; /* Adjusted for smaller screens */
+        font-weight: 600; /* Bold for better visibility */
+        transition: font-size 0.4s ease;
+    }
+
+    .navbar-toggler {
+        margin: 0;
+        padding: 0.25rem 0.75rem;
+    }
+
+    .navbar-nav {
+        text-align: center;
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .nav-link {
+        padding: 0.75rem;
+        font-size: 1rem; /* Keeps consistent with navbar on desktop */
+        width: 100%;
+        text-align: center;
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .hover-underline-animation::after {
+        bottom: -3px;
+        height: 1.5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        padding: 0.75rem 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1rem; /* Slightly smaller for compact screens */
+        font-weight: 600; /* Bold for better readability */
+    }
+
+    .navbar-toggler {
+        padding: 0.3rem 0.6rem;
+    }
+
+    .nav-link {
+        padding: 0.5rem;
+        font-size: 0.9rem; /* Smaller font for mobile */
+        font-weight: 500; /* Medium weight for legibility */
+    }
 }

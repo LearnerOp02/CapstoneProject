@@ -6,26 +6,30 @@ import { Link } from 'react-router-dom';
 import { FaLocationDot, FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import emailjs from 'emailjs-com';
+import '../style/Contact.css';
 
 const ContactUs = () => {
-  useEffect(() => {
-    console.log("Map section loaded");
-  }, []);
-
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs.sendForm('service_35evjmh', 'template_2od4x3r', form.current, 'aYJwPKPk2z2MMpKy5')
       .then((result) => {
-        console.log(result.text);
         alert('Message sent successfully!');
         form.current.reset();
       }, (error) => {
-        console.log(error.text);
         alert('Failed to send the message, please try again.');
       });
   };
+
+  useEffect(() => {
+    const sections = document.querySelectorAll('.fade-in-section');
+    sections.forEach((section, index) => {
+      setTimeout(() => {
+        section.classList.add('animate__animated', 'animate__fadeInUp');
+      }, index * 200);
+    });
+  }, []);
 
   return (
     <Container className="contact-container mt-5 mb-5">
@@ -35,7 +39,7 @@ const ContactUs = () => {
       {/* Introductory Text Section */}
       <Row className="justify-content-center mb-5">
         <Col xs={12} md={8}>
-          <p className="text-center contact-us-description">
+          <p className="text-center contact-us-description fade-in-section">
             We're here to assist you. If you have any questions, feedback, or need support, feel free to reach out through the form below or contact us directly using our details provided. We aim to respond promptly to every query and appreciate your interest in connecting with us.
           </p>
         </Col>
@@ -44,7 +48,7 @@ const ContactUs = () => {
       {/* Map Section */}
       <Row className="mb-5">
         <Col xs={12}>
-          <div className="map-container">
+          <div className="map-container fade-in-section shadow">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.4993866080677!2d72.95142017781153!3d19.173378635771904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b912dfbe021d%3A0x1549238dfcb8009f!2sUnion%20Bank%20Of%20India!5e0!3m2!1sen!2sin!4v1721754958442!5m2!1sen!2s"
               width="100%"
@@ -59,19 +63,19 @@ const ContactUs = () => {
       </Row>
 
       {/* Address and Form Section */}
-      <Row className="align-items-start">
+      <Row className="align-items-start fade-in-section">
         <Col md={6} className="mb-4 mb-md-0">
           <h3 className="text-center mb-4">Our Office</h3>
           <div className="address-section text-center text-md-start">
             <p>
-              <FaLocationDot className="me-2" />  213, 2nd Floor, Sai Arcade,<br />
+              <FaLocationDot className="me-2 text-primary" />  213, 2nd Floor, Sai Arcade,<br />
               Above Union Bank of India,<br />
               Netaji Subhash Road, Mulund-West,<br />
               Mumbai - 400080, India.
             </p>
             <p>
-              <MdEmail className="me-2" /> <Link to="mailto:saisamarthpolytech@gmail.com">saisamarthpolytech@gmail.com</Link><br />
-              <FaPhone className="me-2" /> <Link to="tel:+919324529411">+91 9324529411</Link>
+              <MdEmail className="me-2 text-primary" /> <Link to="mailto:saisamarthpolytech@gmail.com">saisamarthpolytech@gmail.com</Link><br />
+              <FaPhone className="me-2 text-primary" /> <Link to="tel:+919324529411">+91 9324529411</Link>
             </p>
           </div>
         </Col>
@@ -122,7 +126,7 @@ const ContactUs = () => {
                 ></textarea>
               </div>
               <div className='text-center'>
-                <button type='submit' className='btn btn-primary'>Submit Inquiry</button>
+                <button type='submit' className='btn btn-primary btn-lg'>Submit Inquiry</button>
               </div>
             </form>
             <p className='text-center text-secondary mt-4'>

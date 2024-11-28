@@ -6,7 +6,7 @@ import logo from '../assets/logo.jpg';
 
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-lg bg-dark text-light py-3 border-bottom border-3 border-warning animate-navbar">
+        <nav className="navbar navbar-expand-lg text-light py-3 border-bottom border-3 border-warning animate-navbar">
             <div className="container-fluid d-flex align-items-center justify-content-between">
                 <div className="d-flex align-items-center">
                     <Link className="navbar-brand text-uppercase fw-bold text-warning" to="/">

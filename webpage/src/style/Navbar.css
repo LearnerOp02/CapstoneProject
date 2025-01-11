@@ -1,158 +1,214 @@
-/* Navbar Styles */
+/* Enhanced Modern Navbar Styles */
+:root {
+  --navbar-bg: linear-gradient(145deg, #1a1d40 0%, #2a2d60 100%);
+  --navbar-scrolled-bg: rgba(26, 29, 64, 0.98);
+  --accent-color: #ffc107;
+  --text-color: rgba(255, 255, 255, 0.9);
+  --hover-bg: rgba(255, 255, 255, 0.1);
+}
+
 .navbar {
-    background-color: #1a1d40;
-    padding: 1rem;
-    transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
-                padding 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-    font-family: "Roboto", sans-serif; /* Web-friendly font */
-    font-size: 16px; /* Base font size for better readability */
+  background: var(--navbar-bg);
+  padding: 0.75rem 1.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-.navbar:hover {
-    background-color: #151836;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+/* Enhanced Scroll Effect */
+.navbar-scrolled {
+  background: var(--navbar-scrolled-bg);
+  padding: 0.5rem 1.5rem;
+  backdrop-filter: blur(15px) saturate(200%);
+  -webkit-backdrop-filter: blur(15px) saturate(200%);
 }
 
+/* Modern Brand Styling */
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--accent-color) !important;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Logo Animation */
 .navbar-logo {
-    width: 40px;
-    height: auto;
-    transition: transform 0.4s ease, opacity 0.3s ease;
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .navbar-logo:hover {
-    transform: scale(1.1);
-    opacity: 0.9; /* Slight fade effect for a polished feel */
+  transform: rotate(8deg) scale(1.1);
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3)) brightness(1.1);
 }
 
+/* Modern Nav Links */
 .nav-link {
-    color: #ffffff;
-    margin: 0 10px;
-    position: relative;
-    font-size: 1rem; /* Ensure consistency with base font size */
-    font-weight: 500; /* Medium weight for links */
-    transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-                transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--text-color) !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
 }
 
 .nav-link:hover {
-    color: #ffc107;
-    transform: translateY(-3px);
+  color: var(--accent-color) !important;
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
+/* Enhanced Underline Animation */
 .hover-underline-animation::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: #ffc107;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
 }
 
 .hover-underline-animation:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+  width: 100%;
+  left: 0;
+  opacity: 1;
+  box-shadow: 0 0 10px var(--accent-color);
 }
 
+/* Modern Hamburger Menu */
 .navbar-toggler {
-    background-color: #ffc107;
-    border: none;
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
-    transition: background-color 0.4s ease, transform 0.4s ease;
-    font-size: 1rem; /* Consistent with base font size */
-    font-weight: 600; /* Bold for prominence */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.4rem;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .navbar-toggler:hover {
-    background-color: #e0a800;
-    transform: scale(1.05); /* Subtle zoom-in for smoother interaction */
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Layout Adjustments */
-@media (min-width: 1200px) {
-    .navbar {
-        padding: 1rem 4rem;
-    }
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.3);
+  border-color: var(--accent-color);
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
-    .navbar {
-        padding: 1rem 3rem;
-    }
+/* Enhanced Mobile Menu */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: rgba(26, 29, 64, 0.95);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-top: 1rem;
+    box-shadow: 
+      0 10px 30px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform-origin: top;
+    animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-    .navbar .navbar-nav {
-        margin-left: auto;
-    }
+  .nav-link {
+    padding: 0.75rem 1rem !important;
+    text-align: center;
+    border-radius: 8px;
+    margin: 0.25rem 0;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(0) scale(1.02);
+  }
+
+  .nav-link.active {
+    background: rgba(255, 193, 7, 0.15);
+    color: var(--accent-color) !important;
+  }
 }
 
-@media (max-width: 768px) {
-    .navbar-logo {
-        display: none;
-    }
-
-    .navbar .container-fluid {
-        margin: 0;
-        padding: 0;
-    }
-
-    .navbar-brand {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 1.1rem; /* Adjusted for smaller screens */
-        font-weight: 600; /* Bold for better visibility */
-        transition: font-size 0.4s ease;
-    }
-
-    .navbar-toggler {
-        margin: 0;
-        padding: 0.25rem 0.75rem;
-    }
-
-    .navbar-nav {
-        text-align: center;
-        margin-top: 1rem;
-        width: 100%;
-    }
-
-    .nav-link {
-        padding: 0.75rem;
-        font-size: 1rem; /* Keeps consistent with navbar on desktop */
-        width: 100%;
-        text-align: center;
-        display: block;
-        margin: 0.5rem 0;
-    }
-
-    .hover-underline-animation::after {
-        bottom: -3px;
-        height: 1.5px;
-    }
+/* Enhanced Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
-@media (max-width: 576px) {
-    .navbar {
-        padding: 0.75rem 1rem;
-    }
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
 
-    .navbar-brand {
-        font-size: 1rem; /* Slightly smaller for compact screens */
-        font-weight: 600; /* Bold for better readability */
-    }
+/* Active Link Indicator */
+.nav-link.active {
+  background: rgba(255, 193, 7, 0.1);
+  color: var(--accent-color) !important;
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
 
-    .navbar-toggler {
-        padding: 0.3rem 0.6rem;
-    }
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
 
-    .nav-link {
-        padding: 0.5rem;
-        font-size: 0.9rem; /* Smaller font for mobile */
-        font-weight: 500; /* Medium weight for legibility */
-    }
+/* Loading Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.navbar-loading {
+  background: linear-gradient(
+    90deg,
+    rgba(26, 29, 64, 0.95) 25%,
+    rgba(42, 45, 96, 0.95) 50%,
+    rgba(26, 29, 64, 0.95) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
 }

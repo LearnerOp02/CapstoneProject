@@ -17,35 +17,34 @@ const Application = () => {
     },
     {
       name: "Automobile",
-      imgSrc: "path-to-image-automobile.jpg",
+      imgSrc: "https://www.saisamarthpolytech.com/images/auto.jpg",
       description: "Supporting industrial flooring for automobile production.",
     },
     {
       name: "Pharmaceutical",
-      imgSrc: "path-to-image-pharmaceutical.jpg",
+      imgSrc: "https://www.saisamarthpolytech.com/images/pharma.jpg",
       description: "Sterile and clean environments for pharmaceutical labs.",
     },
     {
       name: "Medical",
-      imgSrc: "path-to-image-medical.jpg",
+      imgSrc: "https://www.saisamarthpolytech.com/images/medi.jpg",
       description: "Clean and safe surfaces for medical facilities.",
     },
     {
       name: "Warehouse",
-      imgSrc: "path-to-image-warehouse.jpg",
+      imgSrc: "https://www.saisamarthpolytech.com/images/warehouse.jpg",
       description: "Durable flooring for large warehouse spaces.",
     },
     {
       name: "Parking",
-      imgSrc: "path-to-image-parking.jpg",
+      imgSrc: "https://www.saisamarthpolytech.com/images/parking.jpg",
       description: "Strong and resistant flooring for parking areas.",
     },
     {
       name: "Construction",
-      imgSrc: "path-to-image-construction.jpg",
+      imgSrc: "https://www.saisamarthpolytech.com/images/construction.jpg",
       description: "Safe and resilient surfaces for construction zones.",
     },
-    
   ];
 
   useEffect(() => {
@@ -78,12 +77,13 @@ const Application = () => {
         <div className="row">
           {sectors.map((sector, index) => (
             <div className="col-lg-3 col-md-4 col-sm-6 mb-4" key={index}>
-              <div className="card shadow h-100 sector-card ">
+              <div className="card shadow h-100 sector-card">
                 <div className="card-img-container">
                   <img
                     src={sector.imgSrc}
                     className="card-img-top sector-image"
                     alt={sector.name}
+                    loading="lazy" // Improve performance with lazy loading
                   />
                 </div>
                 <div className="card-overlay">

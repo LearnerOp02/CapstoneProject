@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import client1 from "./Images/1.jpg";
 import client2 from "./Images/2.jpg";
@@ -37,6 +37,7 @@ import client33 from "./Images/33.jpg";
 import client34 from "./Images/34.jpg";
 import client35 from "./Images/35.jpg";
 import client36 from "./Images/36.jpg";
+import "../style/Client.css";
 
 const Client = () => {
   const clientLogos = [
@@ -78,6 +79,14 @@ const Client = () => {
     client36,
   ];
 
+  useEffect(() => {
+    // Add animation delay to each client card
+    const cards = document.querySelectorAll(".client-card");
+    cards.forEach((card, index) => {
+      card.style.setProperty("--index", index);
+    });
+  }, []);
+
   return (
     <div className="client-section py-5">
       <Container className="client-container text-center">
@@ -88,28 +97,26 @@ const Client = () => {
           reliability.
         </p>
 
-        <Row className="justify-content-center">
-          <Col md={10}>
-            <Row className="g-4">
-              {clientLogos.map((logo, index) => (
-                <Col
-                  xs={6}
-                  sm={4}
-                  md={3}
-                  key={index}
-                  className="d-flex justify-content-center align-items-center"
-                >
-                  <div className="client-card" style={{ "--index": index }}>
-                    <img
-                      src={logo}
-                      alt={`Client Logo ${index + 1}`}
-                      className="img-fluid client-logo"
-                    />
-                  </div>
-                </Col>
-              ))}
-            </Row>
-          </Col>
+        <Row className="g-4">
+          {clientLogos.map((logo, index) => (
+            <Col
+              xs={6}
+              sm={4}
+              md={3}
+              key={index}
+              className="d-flex justify-content-center align-items-center"
+            >
+              <div className="client-card">
+                <div className="card-inner">
+                  <img
+                    src={logo}
+                    alt={`Client Logo ${index + 1}`}
+                    className="client-logo"
+                  />
+                </div>
+              </div>
+            </Col>
+          ))}
         </Row>
 
         <Row className="justify-content-center mt-5">

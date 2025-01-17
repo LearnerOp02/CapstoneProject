@@ -1,109 +1,284 @@
+/* Global Styles */
 .home-container {
-    background: linear-gradient(90deg, #0d1b2a, #1a1b41);
-    color: #fff;
-    min-height: 100vh;
-    font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
-/* Typography */
-h1 {
-    font-size: 2.5rem; /* Scalable heading for larger screens */
-    line-height: 1.3;
-    font-weight: bold;
+.carousel-item img {
+  height: 620px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
 }
 
-h2 {
-    font-size: 2rem;
-    line-height: 1.2;
-    font-weight: bold;
+.carousel-item:hover img {
+  transform: scale(1.05);
 }
 
-p {
-    font-size: 1rem;
-    line-height: 1.6;
-    font-weight: 300;
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
 }
 
-.btn {
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 0.75rem 1.25rem;
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-/* Smooth Fade-In Animation */
-.fade-in {
-    animation: fadeIn 1.5s ease forwards;
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+/* Welcome Section */
+.welcome-section {
+  background: linear-gradient(135deg, #1a1d40, #2a2d60);
+  padding: 6rem 0;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
 }
 
-/* Hover Effects */
-.btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(255, 221, 87, 0.3);
+.welcome-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  animation: fadeInDown 1s ease forwards;
+}
+
+.welcome-title .highlight {
+  color: #ff6f00;
+  position: relative;
+  display: inline-block;
+}
+
+.welcome-title .highlight::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #ff6f00;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+}
+
+.welcome-title:hover .highlight::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.welcome-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* About Us Section */
+.about-us {
+  background-color: #fff;
+  padding: 6rem 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1d40;
+  margin-bottom: 2rem;
+  text-align: center;
+  animation: fadeInDown 1s ease forwards;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+/* Leadership Section */
+.leadership {
+  background-color: #f8f9fa;
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.leadership-text {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.8;
+}
+
+/* Gallery Section */
+.gallery {
+  background-color: #fff;
+  padding: 6rem 0;
+}
+
+.gallery .section-title {
+  margin-bottom: 3rem;
+}
+
+.card {
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 4px 15px rgba(255, 221, 87, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsive Typography */
-@media (max-width: 1200px) {
-    h1 {
-        font-size: 2.2rem;
-    }
-    h2 {
-        font-size: 1.8rem;
-    }
-    p {
-        font-size: 0.95rem;
-    }
-    .btn {
-        font-size: 0.95rem;
-    }
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #1a1d40;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.btn-primary:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.btn-primary:hover {
+  background-color: #2a2d60;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(26, 29, 64, 0.3);
+}
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-    h2 {
-        font-size: 1.5rem;
-    }
-    p {
-        font-size: 0.9rem;
-    }
-    .btn {
-        font-size: 0.9rem;
-        padding: 0.65rem 1rem;
-    }
+  .welcome-title {
+    font-size: 2.2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .welcome-text,
+  .about-text,
+  .leadership-text {
+    font-size: 1rem;
+  }
+
+  .card-img-top {
+    height: 150px;
+  }
+
+  .gallery .row {
+    gap: 1rem; /* Add gap between cards on smaller screens */
+  }
 }
 
 @media (max-width: 576px) {
-    h1 {
-        font-size: 1.8rem;
-    }
-    h2 {
-        font-size: 1.3rem;
-    }
-    p {
-        font-size: 0.85rem;
-    }
-    .btn {
-        font-size: 0.85rem;
-        padding: 0.6rem 0.9rem;
-    }
-}
+  .welcome-title {
+    font-size: 2rem;
+  }
 
-/* General Transition for Hover Effects */
-.transition {
-    transition: all 0.3s ease-in-out;
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .welcome-text,
+  .about-text,
+  .leadership-text {
+    font-size: 0.95rem;
+  }
+
+  .card-img-top {
+    height: 120px;
+  }
+
+  .gallery .row {
+    flex-direction: column; /* Stack cards vertically on mobile */
+    align-items: center;
+  }
 }

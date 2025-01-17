@@ -1,38 +1,34 @@
-/* Enhanced Modern Navbar Styles */
 :root {
   --navbar-bg: linear-gradient(145deg, #1a1d40 0%, #2a2d60 100%);
   --navbar-scrolled-bg: rgba(26, 29, 64, 0.98);
-  --accent-color: #ffc107;
+  --accent-color: #ff6f00; /* Professional orange accent */
   --text-color: rgba(255, 255, 255, 0.9);
   --hover-bg: rgba(255, 255, 255, 0.1);
+  --font-family: "Poppins", sans-serif; /* Modern font */
 }
 
 .navbar {
   background: var(--navbar-bg);
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: sticky;
   top: 0;
   z-index: 1000;
   backdrop-filter: blur(10px) saturate(180%);
   -webkit-backdrop-filter: blur(10px) saturate(180%);
-  box-shadow: 
-    0 4px 30px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  font-family: var(--font-family);
 }
 
-/* Enhanced Scroll Effect */
 .navbar-scrolled {
-  background: var(--navbar-scrolled-bg);
-  padding: 0.5rem 1.5rem;
+  background: var(--navbar-bg);
+  padding: 0.75rem 2rem;
   backdrop-filter: blur(15px) saturate(200%);
   -webkit-backdrop-filter: blur(15px) saturate(200%);
 }
 
-/* Modern Brand Styling */
 .navbar-brand {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 600;
   letter-spacing: 0.5px;
   color: var(--accent-color) !important;
   display: flex;
@@ -42,10 +38,9 @@
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Enhanced Logo Animation */
 .navbar-logo {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
@@ -56,36 +51,38 @@
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3)) brightness(1.1);
 }
 
-/* Modern Nav Links */
 .nav-link {
   color: var(--text-color) !important;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
-  padding: 0.5rem 1rem !important;
+  padding: 0.75rem 1.25rem !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 .nav-link:hover {
   color: var(--accent-color) !important;
   transform: translateY(-2px);
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 
-    0 4px 15px rgba(0, 0, 0, 0.1),
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-/* Enhanced Underline Animation */
 .hover-underline-animation::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-color),
+    transparent
+  );
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
 }
@@ -97,10 +94,9 @@
   box-shadow: 0 0 10px var(--accent-color);
 }
 
-/* Modern Hamburger Menu */
 .navbar-toggler {
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 0.4rem;
+  padding: 0.5rem;
   border-radius: 8px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background: rgba(255, 255, 255, 0.05);
@@ -115,19 +111,31 @@
 }
 
 .navbar-toggler:focus {
-  box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.3);
+  box-shadow: 0 0 0 3px rgba(255, 127, 80, 0.3);
   border-color: var(--accent-color);
 }
 
-/* Enhanced Mobile Menu */
+/* Responsive Adjustments */
 @media (max-width: 991px) {
+  .navbar {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+
+  .navbar-logo {
+    width: 40px;
+    height: 40px;
+  }
+
   .navbar-collapse {
     background: rgba(26, 29, 64, 0.95);
     border-radius: 12px;
     padding: 1rem;
     margin-top: 1rem;
-    box-shadow: 
-      0 10px 30px rgba(0, 0, 0, 0.2),
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(15px) saturate(180%);
     -webkit-backdrop-filter: blur(15px) saturate(180%);
@@ -150,12 +158,91 @@
   }
 
   .nav-link.active {
-    background: rgba(255, 193, 7, 0.15);
+    background: rgba(255, 127, 80, 0.15);
     color: var(--accent-color) !important;
   }
 }
 
-/* Enhanced Animations */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .navbar-logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .navbar-toggler {
+    padding: 0.4rem;
+  }
+
+  .navbar-collapse {
+    padding: 0.75rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.9rem;
+  }
+
+  /* Place brand, toggler, and links in one line */
+  .navbar .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-collapse {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column; /* Vertical layout for mobile */
+    gap: 0.5rem;
+  }
+
+  .navbar-toggler {
+    order: 2; /* Move toggler to the end */
+  }
+
+  .navbar-brand {
+    order: 1; /* Move brand to the start */
+  }
+
+  .navbar-collapse {
+    order: 3; /* Move links to the middle */
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 0.9rem;
+  }
+
+  .navbar-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem !important;
+  }
+
+  .navbar-toggler {
+    padding: 0.3rem;
+  }
+}
+
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -178,21 +265,17 @@
   }
 }
 
-/* Active Link Indicator */
 .nav-link.active {
-  background: rgba(255, 193, 7, 0.1);
+  background: rgba(255, 127, 80, 0.1);
   color: var(--accent-color) !important;
-  box-shadow: 
-    0 4px 15px rgba(0, 0, 0, 0.1),
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-/* Smooth Scroll Behavior */
 html {
   scroll-behavior: smooth;
 }
 
-/* Loading Animation */
 @keyframes shimmer {
   0% {
     background-position: -200% 0;

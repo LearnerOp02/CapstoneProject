@@ -18,80 +18,59 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
-    <nav className="navbar navbar-expand-lg text-light py-3 border-bottom border-3 border-warning animate-navbar">
-      <div className="container-fluid d-flex align-items-center justify-content-between">
-        <div className="d-flex align-items-center">
-          <Link
-            className="navbar-brand text-uppercase fw-bold text-warning"
-            to="/"
-          >
-            <img src={logo} alt="Logo" className="navbar-logo img-fluid me-3" />
-            Saisamarth Polytech Pvt. Ltd.
-          </Link>
-        </div>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div className="container-fluid">
+        <Link className="navbar-brand d-flex align-items-center" to="/">
+          <img
+            src={logo}
+            alt="Logo"
+            className="navbar-logo img-fluid me-3"
+            style={{ width: "50px", height: "50px" }}
+          />
+          <span className="fw-bold">Saisamarth Polytech Pvt. Ltd.</span>
+        </Link>
         <button
-          className="navbar-toggler bg-light"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div
-          className="collapse navbar-collapse justify-content-end"
-          id="navbarSupportedContent"
-        >
-          <ul className="navbar-nav mb-2 mb-lg-0">
+        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul className="navbar-nav">
             <li className="nav-item">
-              <Link
-                className="nav-link text-light text-uppercase fw-bold mx-2 hover-underline-animation"
-                aria-current="page"
-                to="/"
-              >
+              <Link className="nav-link text-light mx-2" to="/">
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                className="nav-link text-light text-uppercase fw-bold mx-2 hover-underline-animation"
-                to="/aboutus"
-              >
+              <Link className="nav-link text-light mx-2" to="/aboutus">
                 About Us
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                className="nav-link text-light text-uppercase fw-bold mx-2 hover-underline-animation"
-                to="/contactus"
-              >
+              <Link className="nav-link text-light mx-2" to="/contactus">
                 Contact Us
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                className="nav-link text-light text-uppercase fw-bold mx-2 hover-underline-animation"
-                to="/product"
-              >
+              <Link className="nav-link text-light mx-2" to="/product">
                 Product
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                className="nav-link text-light text-uppercase fw-bold mx-2 hover-underline-animation"
-                to="/application"
-              >
+              <Link className="nav-link text-light mx-2" to="/application">
                 Application
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                className="nav-link text-light text-uppercase fw-bold mx-2 hover-underline-animation"
-                to="/clients"
-              >
+              <Link className="nav-link text-light mx-2" to="/clients">
                 Clients
               </Link>
             </li>
